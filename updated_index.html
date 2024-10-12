@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Questionnaire</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Energy Power Station Proposal Questionnaire</h1>
+
+        <!-- Section 1: Circular Layout for the First Question -->
+        <div class="section active" id="section1">
+            <h2>איזה סוג תחנת כוח אתם מציעים לבנות בישראל?</h2>
+            <div class="circle-container">
+                <div class="circle" onclick="goToSection(2)">
+                    <img src="icons/gas.png" alt="Natural Gas">
+                    <p>גז טבעי</p>
+                </div>
+                <div class="circle" onclick="goToSection(3)">
+                    <img src="icons/wind.png" alt="Wind Turbine">
+                    <p>טורבינת רוח</p>
+                </div>
+                <div class="circle" onclick="goToSection(4)">
+                    <img src="icons/hydro.png" alt="Hydroelectric">
+                    <p>הידרו-אלקטרי</p>
+                </div>
+                <div class="circle" onclick="goToSection(5)">
+                    <img src="icons/solar.png" alt="Photovoltaic">
+                    <p>פוטו-וולטאי</p>
+                </div>
+                <div class="circle" onclick="goToSection(6)">
+                    <img src="icons/thermo-solar.png" alt="Thermo-Solar">
+                    <p>תרמו-סולארי</p>
+                </div>
+                <div class="circle" onclick="goToSection(7)">
+                    <img src="icons/nuclear.png" alt="Nuclear">
+                    <p>גרעיני</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add sections 2 to 15 here -->
+        
+        <div id="section15" class="section">
+            <h2>החלטה סופית</h2>
+            <p>Thank you for your responses! You've selected a type of power station. Please bring your decision to the "Paths of Energy" program for further exploration!</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

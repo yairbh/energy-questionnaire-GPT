@@ -5,8 +5,11 @@ function goToSection(sectionId) {
         section.classList.remove('active');
     });
     
-    // Show the next section
-    document.getElementById('section' + sectionId).classList.add('active');
+    // Show the selected section
+    const selectedSection = document.getElementById('section' + sectionId);
+    if (selectedSection) {
+        selectedSection.classList.add('active');
+    }
 }
 
 // Initialize by showing the first section

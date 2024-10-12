@@ -5,6 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Energy Questionnaire</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .container {
+            margin: 50px auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        /* Circular layout for the first question */
+        .circle-container {
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #eef4f9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .circle img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .circle p {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .circle:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        /* Positioning the icons in a circular formation */
+        .circle:nth-child(1) {
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        .circle:nth-child(2) {
+            top: 15%;
+            left: 30%;
+        }
+
+        .circle:nth-child(3) {
+            top: 15%;
+            left: 70%;
+        }
+
+        .circle:nth-child(4) {
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+
+        .circle:nth-child(5) {
+            bottom: 15%;
+            left: 70%;
+        }
+
+        .circle:nth-child(6) {
+            bottom: 15%;
+            left: 30%;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -84,6 +185,23 @@
             <p>Thank you for your responses! You've selected a type of power station. Please bring your decision to the "Paths of Energy" program for further exploration!</p>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script>
+        function goToSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show the selected section
+            const selectedSection = document.getElementById('section' + sectionId);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+            }
+        }
+
+        // Initialize by showing the first section
+        document.getElementById('section1').classList.add('active');
+    </script>
 </body>
 </html>
